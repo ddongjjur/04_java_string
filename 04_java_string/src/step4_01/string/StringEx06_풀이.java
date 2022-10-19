@@ -12,27 +12,28 @@ public class StringEx06_풀이 {
 		// 문제 1) arr 배열에 각 점수를 저장하고, 총점 출력
 		// 정답 1) 200
 		int[] arr = new int[3];
+		int total = 0;
 		
-		String score1 = str.substring(0, 2);
-		String score2 = str.substring(3, 6);
-		String score3 = str.substring(7);
+		String[] score = str.split("/");
 		
-		int nScore1 = Integer.parseInt(score1);
-		int nScore2 = Integer.parseInt(score2);
-		int nScore3 = Integer.parseInt(score3);
+		for (int i = 0; i < score.length; i++) {
+			arr[i] = Integer.parseInt(score[i]);
+			total += arr[i];
+		}
 		
-		arr[0] = nScore1;
-		arr[1] = nScore2;
-		arr[2] = nScore3;
-		
-		System.out.println("총 점수: " + nScore1 + nScore2 + nScore3);
+		System.out.println("총점: " + total);
 		
 		// 문제 2) scores 배열의 각 점수를 슬러시를 구분자로 하나의 문자열로 연결
 		// 정답 2) 11/100/89
 		int[] scores = {11, 100, 89};
 		String text = "";
-
-
+		
+		for (int i = 0; i < scores.length; i++) {
+			if (i < scores.length - 1)	text += scores[i] + ",";
+			else if (i < score.length)	text += score[i];
+				
+		}
+		System.out.println(text);
 	}
 
 }
