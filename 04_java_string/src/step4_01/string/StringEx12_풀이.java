@@ -1,6 +1,6 @@
 package step4_01.string;
 
-//2022-10-20 오후 5시 16분 ~
+//2022-10-20 오후 5시 16분 ~ 오후 10시 5분
 
 import java.util.Scanner;
 
@@ -47,16 +47,16 @@ public class StringEx12_풀이 {
 		while(true) {
 			
 			System.out.print("상태: ");
-			if (identifier != -1) System.out.println(ids[identifier] + "님 로그인 중 \n");
-			if (identifier == -1) System.out.println("로그아웃\n");
+			if (loginOk != -1) System.out.println(ids[identifier] + "님 로그인 중 \n");
+			if (loginOk == -1) System.out.println("로그아웃\n");
 			
-			System.out.println("┌[ MEGA MART ]┐");
-			System.out.println("│[1]─로 그 인─│");
-			System.out.println("│[2]─로그아웃─│");
-			System.out.println("│[3]─쇼    핑─│");
-			System.out.println("│[4]─장바구니─│");
-			System.out.println("│[0]─종    료─│");
-			System.out.println("└─────────────┘");
+			System.out.println("┌[MEGA MART]┐");
+			System.out.println("│[1]로 그 인│");
+			System.out.println("│[2]로그아웃│");
+			System.out.println("│[3]쇼    핑│");
+			System.out.println("│[4]장바구니│");
+			System.out.println("│[0]종    료│");
+			System.out.println("└───────────┘");
 			
 			System.out.print("메뉴 선택 : ");
 			int sel = scan.nextInt();
@@ -84,7 +84,9 @@ public class StringEx12_풀이 {
 				}
 				
 				if (loginOk == -1) {
-					System.out.println("\n 아이디와 비밀번호를 다시 확인해주세요. \n");
+					System.out.println();
+					System.out.println("아이디와 비밀번호를 다시 확인해주세요.");
+					System.out.println();
 				}
 				else {
 					System.out.println();
@@ -92,27 +94,82 @@ public class StringEx12_풀이 {
 					System.out.println();
 				}
 				
-				/*
-				 * qwer님, 환영합니다.
-					-----------------------------
-					상태 : qwer로그인
-					-----------------------------
-				 * 
-				 * 
-				 * 
-				 */
 				System.out.println();
 			}
-			else if (sel == 2) {}
-			else if (sel == 3) {}
-			else if (sel == 4) {}
+			else if (sel == 2) {
+				
+				if (loginOk == -1) {
+					System.out.println();
+					System.out.println("로그인을 먼저 해주세요.");
+					System.out.println();
+					continue;
+				}
+				
+				if (loginOk == 1) {
+					loginOk = -1;
+					System.out.println();
+					System.out.println("로그아웃 되었습니다.");
+					System.out.println();
+				}
+				
+			}
+			else if (sel == 3) {
+				if (loginOk == -1) {
+					System.out.println("로그인 후 이용 가능합니다.");
+					continue;
+				}
+				
+				while (true) {
+					System.out.println("상품목록");
+					for (int i = 0; i < items.length; i++) {
+						System.out.println("[" + (i + 1) + "] " + items[i]);
+					}
+					System.out.println("[" + (items.length + 1) + "] " + "뒤로가기");
+					
+					System.out.print("상품 번호를 입력하세요: ");
+					int itemChoice = scan.nextInt();
+					
+					if (itemChoice == 4) {
+						break;
+					}
+					jang[count][0] = identifier;
+					jang[count][1] = itemChoice;
+					count++;
+				}
+			}
+			else if (sel == 4) {
+				
+				if (loginOk != 1) {
+					System.out.println("로그인 후 이용해주세요.");
+					continue;
+				}
+				else if (loginOk == 1)	System.out.println("아이디: " + ids[identifier]);
+				
+				int apple = 0;
+				int banana = 0;
+				int berry = 0;
+				
+				for (int i = 0; i < count; i++) {
+					if (jang[i][0] == identifier) {
+						if (jang[i][1] == 1) apple++;
+						if (jang[i][1] == 2) banana++;
+						if (jang[i][1] == 3) berry++;
+					}
+				}
+				
+				System.out.println(items[0] + ": " + apple + "개");
+				System.out.println(items[1] + ": " + banana + "개");
+				System.out.println(items[2] + ": " + berry + "개");
+				
+			}
 			else if (sel == 0) {
 				System.out.println("프로그램 종료");
 				break;
 			}
 			
 		}
-
+		
+		scan.close();
 
 
 	}

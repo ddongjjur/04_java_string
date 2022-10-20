@@ -79,6 +79,7 @@ public class StringEx11_풀이 {
 				}
 			}
 			
+			scan.close();
 		}
 
 

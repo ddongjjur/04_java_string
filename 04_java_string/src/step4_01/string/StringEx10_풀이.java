@@ -44,7 +44,7 @@ public class StringEx10_풀이 {
 			}
 			
 		}
-		
+		scan.close();
 	}
 
 }

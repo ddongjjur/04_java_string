@@ -53,7 +53,7 @@ public class StringEx09_풀이 {
 			
 		}
 		
-		
+		scan.close();
 	}
 
 }
