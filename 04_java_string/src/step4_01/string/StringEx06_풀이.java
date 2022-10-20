@@ -22,6 +22,7 @@ public class StringEx06_풀이 {
 		}
 		
 		System.out.println("총점: " + total);
+		System.out.println();
 		
 		// 문제 2) scores 배열의 각 점수를 슬러시를 구분자로 하나의 문자열로 연결
 		// 정답 2) 11/100/89
@@ -29,7 +30,7 @@ public class StringEx06_풀이 {
 		String text = "";
 		
 		for (int i = 0; i < scores.length; i++) {
-			if (i < scores.length - 1)	text += scores[i] + ",";
+			if (i < scores.length - 1)	text += scores[i] + "/";
 			else if (i < score.length)	text += score[i];
 				
 		}

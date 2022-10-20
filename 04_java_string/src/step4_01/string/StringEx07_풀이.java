@@ -22,7 +22,7 @@ public class StringEx07_풀이 {
 		}
 		
 		for (int i = 0; i < seperate1.length; i++) {
-			System.out.println("이름: " + name[i]);
+			System.out.print("이름: " + name[i] + "  ");
 			System.out.println("성적: " + score[i]);
 		}
 	}

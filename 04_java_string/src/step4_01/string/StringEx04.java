@@ -39,7 +39,27 @@ public class StringEx04 {
 		String str3 = String.valueOf(salary);
 		System.out.println(str3 + 50000); 		// 200000050000
 		
+		System.out.println();
 		
+		
+		// [참고] 구글에서 ASCII 코드표 검색
+		
+		
+		// 문자 >> 숫자
+		
+		char ch1 = 'a';
+		int n1 = ch1;
+		System.out.println(ch1 + " / " + n1);
+		
+		
+		// 숫자 >> 문자
+		
+		int n2 = 65;
+		char ch2 = (char)n2;
+		System.out.println(ch2 + " / " + n2);
+		
+		System.out.println((int)'s' + 3);
+		System.out.println((char)(65 + 10));
 		
 	}
 

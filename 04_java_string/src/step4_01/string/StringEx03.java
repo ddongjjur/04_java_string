@@ -67,7 +67,7 @@ public class StringEx03 {
 		// 4-2) substring(index1부터 끝까지)
 		
 		System.out.println(str.substring(2));		// 2부터 끝까지
-		System.out.println(str.substring(4));		/// 4부터 끝까지
+		System.out.println(str.substring(4));		// 4부터 끝까지
 		
 		
 		
@@ -102,6 +102,16 @@ public class StringEx03 {
 		}
 		System.out.println();
 		
+		System.out.println("\n===============================\n");
+		
+		// [참고] 문자열 비교: 문자열1.compareTo(문자열2)
+		
+		str1 = "ac";
+		str2 = "dc";
+		str3 = "ac";
+		System.out.println(str1.compareTo(str2));		// 왼쪽값(기준값)이 작을 경우 음수가 반환된다.
+		System.out.println(str2.compareTo(str1));		// 왼쪽값(기준값)이 클 경우 양수가 반환된다.
+		System.out.println(str1.compareTo(str3));		// 양쪽 값이 같을 경우 0이 반환된다.
 	}
 
 }

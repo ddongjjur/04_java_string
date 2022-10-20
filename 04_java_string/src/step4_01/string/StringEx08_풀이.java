@@ -16,7 +16,7 @@ public class StringEx08_풀이 {
 				
 		for (int i = 0; i < score.length; i++) {
 			if (i <= score.length - 2) {
-				str += name[i] + "/" + score[i] + ",";
+				str += name[i] + "/" + score[i] + ", ";
 			}
 			else if (i == score.length - 1) {
 				str += name[i] + "/" + score[i];
