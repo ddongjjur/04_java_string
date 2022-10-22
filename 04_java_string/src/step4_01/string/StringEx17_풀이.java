@@ -1,6 +1,6 @@
 package step4_01.string;
 
-//2022-10-21 오후 5시 26분 ~
+//2022-10-21 오후 5시 26분 ~ 오후 10시 00분
 
 import java.util.Scanner;
 
@@ -34,14 +34,23 @@ public class StringEx17_풀이 {
 		String word2 = scan.nextLine();
 		
 		String[] textHub = text.split(" ");
-		String[] temp = new String[text.length()];
+		String temp = new String();
+		
+		String w1 = textHub[0];
+		String w2 = textHub[1];
+		String w3 = textHub[2];
+		String w4 = textHub[3];
 		
 		for (int i = 0; i < textHub.length; i++) {
 			
+			
 			if (word1.equals(textHub[i])) {
-				temp[i] = textHub[i];
+				temp = textHub[i];
 				textHub[i] = word2;
-				word2 = temp[i];
+			}
+			
+			else if (word2.equals(textHub[i])) {
+				textHub[i] = temp;
 			}
 		}
 		for (int i = 0; i < textHub.length; i++) {
